@@ -1027,7 +1027,7 @@ void RegL(){
 
 		ampl_svpwm= GetHypByLegs(UUdL,UUqL);
 		Theta_svpwm=(fThetaL);
-		ampl_svpwm=((double)ampl_svpwm/2.445);//делю на три, что бы избавится от деления на корень из 3 и на корень из 2
+		ampl_svpwm=((double)ampl_svpwm/1.732);//делю на три, что бы избавится от деления на корень из 3 и на корень из 2
 											  //(для приведения к амплитуде синусного ШИМ)
 		svpwm(Theta_svpwm,12500,(double)ampl_svpwm );//(double)ampl_svpwm
 
@@ -1102,13 +1102,13 @@ GetMIN(UUAL-HALF_PWM_HEIGHT,GetMIN(UUBL-HALF_PWM_HEIGHT,UUCL-HALF_PWM_HEIGHT)))/
 		D_ = co*X_ + si*Y_; 
 		Q_ = co*Y_ - si*X_; 
 
-//*/
+//
 		
-		if(ampl_svpwm>2000){
+		//if(ampl_svpwm>2000){
 			UUAL=Ta;
 			UUBL=Tb;
 			UUCL=Tc;
-		}
+		//}*/
 
 		if(UUAL <= MIN_PWM) UUAL = 0;
 		if(UUAL >= MAX_PWM) UUAL = 25000;

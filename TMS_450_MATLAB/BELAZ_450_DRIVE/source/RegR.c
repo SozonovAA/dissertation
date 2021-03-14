@@ -591,7 +591,16 @@ void RegR(){
 
 		Clark(IaR,IbR,IcR,&IAlphaR,&IBetaR);
 		Park(IAlphaR,IBetaR,&IdR,&IqR,fThetaR);
+		//PARK
+		IAlphaR=(2*IaR-IbR-IcR)/3; 
+		IBetaR=(IbR-IcR)*(1/sqrt(3)); 
+		//T0=(IaR+IbR+IcR)/3;
 
+		//Klarc
+		co = cos(fThetaL); 
+		si = sin(fThetaL); 
+		IdR = co*IAlphaR + si*IBetaR; 
+		IqR = co*IBetaR - si*IAlphaR; 
 		// ##### IdReg bgn
 
 		MinMaxLimitInt(5,1050,&IdzR);
