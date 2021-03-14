@@ -36,7 +36,8 @@ void TMS320F28335_Outputs_wrapper(const real_T *Lpars,
 			const real_T *FromKabine,
 			real_T *PWM,
 			DebugInfL *Out_L,
-			DebugInfR *Out_R)
+			DebugInfR *Out_R,
+			real_T *SVPWM)
 {
 /* %%%-SFUNWIZ_wrapper_Outputs_Changes_BEGIN --- EDIT HERE TO _END */
 IaL = Lpars[0];
@@ -53,6 +54,11 @@ ElectricAngleR = Rpars[3];
 Ud = Rpars[4];
 SpeedR = Rpars[6];
 
+Out_L[0].D=D_;
+Out_L[0].Q=Q_;
+Out_L[0].X=X_;
+Out_L[0].Y=Y_;
+Out_L[0].ampl_svpwm=ampl_svpwm;
 Out_L[0].AverageCarSpeed=AverageCarSpeed;
 Out_L[0].DeltaSpeedLCruize = DeltaSpeedLCruize; 
 Out_L[0].SpeedLzCruize = SpeedLzCruize; 
@@ -238,6 +244,12 @@ SpeedHolding = FromKabine[2];
 RegR();        
 RegL();
 
+SVPWM[0]=betta;
+SVPWM[1]=Ta;
+SVPWM[2]=Tb;
+SVPWM[3]=Tc;
+SVPWM[4]=Us;
+SVPWM[5]=Theta_svpwm;
 
 PWM[0] = UUAL;
 PWM[1] = UUBL;

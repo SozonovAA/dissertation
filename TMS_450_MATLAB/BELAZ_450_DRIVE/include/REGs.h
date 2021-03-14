@@ -387,6 +387,18 @@ extern 	int DeltaSpeedRCruize;
 extern 	int SpeedRzCruize;
 extern 	int IqzLCruize;
 extern 	int IqzRCruize;
+//svpwm
+//выходные параметры
+extern 	double betta; //угол внутри сектора
+extern 	double Ta; //сигнал на фазу А
+extern 	double Tb; //сигнал на фазу B
+extern 	double Tc; //сигнал на фазу C
+extern 	double Us; //амплитуда линейного напряжения на выходе
+extern 	double Theta_svpwm;
+extern  int ampl_svpwm;
+extern  double co, si, D_, Q_;
+extern  double X_,Y_;
+
 
 extern int sdEXMAX;
 extern int sdELint;

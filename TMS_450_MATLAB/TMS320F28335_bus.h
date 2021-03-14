@@ -14,6 +14,11 @@
 #ifndef _DEFINED_TYPEDEF_FOR_DebugInfL_
 #define _DEFINED_TYPEDEF_FOR_DebugInfL_ 
 typedef struct {
+  real_T D;
+  real_T Q;
+  real_T X;
+  real_T Y;
+  real_T ampl_svpwm;
   real_T DeltaSpeedLCruize;
   real_T SpeedLzCruize;
   real_T AverageCarSpeed;
