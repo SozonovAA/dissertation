@@ -597,8 +597,8 @@ void RegR(){
 		//T0=(IaR+IbR+IcR)/3;
 
 		//Klarc
-		co = cos(fThetaL); 
-		si = sin(fThetaL); 
+		co = cos(fThetaR); 
+		si = sin(fThetaR); 
 		IdR = co*IAlphaR + si*IBetaR; 
 		IqR = co*IBetaR - si*IAlphaR; 
 		// ##### IdReg bgn

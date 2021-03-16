@@ -1025,9 +1025,9 @@ void RegL(){
 		//12500 - 25000
 		
 
-		ampl_svpwm= GetHypByLegs(UUdL,UUqL);
-		Theta_svpwm=(fThetaL);
-		ampl_svpwm=((double)ampl_svpwm/1.732);//делю на три, что бы избавится от деления на корень из 3 и на корень из 2
+		ampl_svpwm= GetHypByLegs(UUdR,UUqR);
+		Theta_svpwm=(fThetaR+1.57);
+		ampl_svpwm=((double)ampl_svpwm/2.455);//делю на три, что бы избавится от деления на корень из 3 и на корень из 2
 											  //(для приведения к амплитуде синусного ШИМ)
 		svpwm(Theta_svpwm,12500,(double)ampl_svpwm );//(double)ampl_svpwm
 
