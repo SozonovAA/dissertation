@@ -508,7 +508,7 @@ int AverageThisAxleSpeed=0;
 int AverageOtherAxleSpeed=0;
 int AverageCarSpeed=0;
 int ABS=75;
-int fABS=1;
+int fABS=0;
 
 int SpeedHolding=0;
 int zRPMDiz=0;
@@ -679,7 +679,7 @@ void SpeedRegL()
 		{
 			fHoldZero = 0;
 			if(!SpeedHolding || drivePedalON)
-				IqzL = (float)(DeltaSpeedL1*koeff.K10)/4.0 + SummSpeedL;
+				IqzL = (float)(DeltaSpeedL1*koeff.K10)/4.0;// + SummSpeedL;
 			else{
 				//CruizeDriveL += (float)(DeltaSpeedL)*((float)(koeff.K7)/2500.0);
 				//MinMaxLimitInt(0,1500,&CruizeDriveL);
@@ -1025,9 +1025,9 @@ void RegL(){
 		//12500 - 25000
 		
 
-		ampl_svpwm= GetHypByLegs(UUdR,UUqR);
-		Theta_svpwm=(fThetaR+1.57);
-		ampl_svpwm=((double)ampl_svpwm/2.455);//делю на три, что бы избавится от деления на корень из 3 и на корень из 2
+		ampl_svpwm= GetHypByLegs(UUdL,UUqL);
+		Theta_svpwm=(fThetaL);
+		ampl_svpwm=((double)ampl_svpwm/2.45);//делю на три, что бы избавится от деления на корень из 3 и на корень из 2
 											  //(для приведения к амплитуде синусного ШИМ)
 		svpwm(Theta_svpwm,12500,(double)ampl_svpwm );//(double)ampl_svpwm
 
