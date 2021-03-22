@@ -18,7 +18,7 @@
 
 #define dt						0.000666
 
-#define MIN_PWM					1000
+#define MIN_PWM					200
 #define MAX_PWM					(25000-MIN_PWM)
 
 //PINS

@@ -201,12 +201,12 @@ void CalcDeltaIdR()
 
 //попытка отключени€ перемодул€ции
 
-	if(UUdR>12400) UUdR=12400;
+	if(UUdR>11000) UUdR=11000;
 
-	UUqRMAX = GetCatByHypNLeg(UUdR,12500);
+	UUqRMAX = GetCatByHypNLeg(UUdR,11500);
 
-	if(UmR >= 12500)
-		UmR = 12500;
+	if(UmR >= 11500)
+		UmR = 11500;
 	/*
 	if(UUdR>17400) UUdR=17400;
 
@@ -383,7 +383,7 @@ void SpeedRegR()
 						if(IqSummInBrakeR < -(Brake-13)*20)
 							IqSummInBrakeR += 0.1*kBrake;
 					}
-					IqzRnf = IqSummInBrakeR + fTryBrakeDiff*SummSpeedR;
+					IqzRnf = IqSummInBrakeR;// + fTryBrakeDiff*SummSpeedR;
 				}
 				else
 					fHoldZero = 1;//IqzR = (0-SpeedR)*kpz + fTryBrakeDiff*SummSpeedR;
@@ -618,7 +618,7 @@ void RegR(){
 		SIdR += (float)(DeltaIdR*koeff.Ki)/25.0;
 
 //попытка убрать перемодул€цию
-MinMaxLimitFloat(-12500,12500,&SIdR);
+MinMaxLimitFloat(-11000,11000,&SIdR);
 		//MinMaxLimitFloat(-18000,18000,&SIdR);
 
 		UUdR = (float)(DeltaIdR*koeff.Kp)/25.0 + SIdR + (DeltaIdR - DeltaIdOldR)*koeff.Kd;
@@ -661,7 +661,7 @@ MinMaxLimitFloat(-12500,12500,&SIdR);
 		SIqR += (float)(DeltaIqR*koeff.Ki)/25.0;
 
 		//попытка убрать перемодул€цию
-		MinMaxLimitFloat(-12500,12500,&SIqR);
+		MinMaxLimitFloat(-11000,11000,&SIqR);
 		//MinMaxLimitFloat(-17500,17500,&SIqR);
 
 		UUqR = (float)(DeltaIqR*koeff.Kp)/25.0 + SIqR + (DeltaIqR - DeltaIqOldR)*koeff.Kd;

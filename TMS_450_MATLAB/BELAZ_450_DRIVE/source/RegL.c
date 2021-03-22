@@ -658,7 +658,7 @@ void SpeedRegL()
 							IqSummInBrakeL += 0.1*kBrake;
 					}
 
-					IqzLnf = IqSummInBrakeL + fTryBrakeDiff*SummSpeedL;
+					IqzLnf = IqSummInBrakeL;// + fTryBrakeDiff*SummSpeedL;
 				}
 				else
 					fHoldZero = 1;//IqzL = (0-SpeedL)*kpz + fTryBrakeDiff*SummSpeedL;
@@ -673,7 +673,6 @@ void SpeedRegL()
 			SpeedLzCruize = AverageCarSpeed;
 
 			//else SpeedLz1 = AverageCarSpeed;
-
 		}
 		else
 		{
@@ -1109,6 +1108,14 @@ GetMIN(UUAL-HALF_PWM_HEIGHT,GetMIN(UUBL-HALF_PWM_HEIGHT,UUCL-HALF_PWM_HEIGHT)))/
 			UUBL=Tb;
 			UUCL=Tc;
 		//}*/
+		if(Ta <= MIN_PWM) Ta = 0;
+		if(Ta >= MAX_PWM) Ta = 25000;
+		if(Tb <= MIN_PWM) Tb = 0;
+		if(Tb >= MAX_PWM) Tb = 25000;
+		if(Tc <= MIN_PWM) Tc = 0;
+		if(Tc >= MAX_PWM) Tc = 25000;
+
+
 
 		if(UUAL <= MIN_PWM) UUAL = 0;
 		if(UUAL >= MAX_PWM) UUAL = 25000;
